@@ -42,7 +42,7 @@ class AuthorizationRequestDto
     }
 
     /**
-     * 데이터 채우기
+     * fill data
      */
     public function fill(array $data): void
     {
