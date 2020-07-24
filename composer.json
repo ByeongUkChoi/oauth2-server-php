@@ -1,5 +1,5 @@
 {
-    "name": "byeongukchoi/oauth2-server",
+    "name": "byeongukchoi/oauth2-server-php",
     "description": "PHP OAuth2 Server library",
     "require": {
         "php": ">=7.2"
