@@ -6,9 +6,21 @@ use JsonSerializable;
 
 class TokenDto implements JsonSerializable
 {
+    /**
+     * @var string
+     */
     private $accessToken;
+    /**
+     * @var int
+     */
     private $expires;
+    /**
+     * @var string
+     */
     private $refreshToken;
+    /**
+     * @var int
+     */
     private $refreshTokenExpires;
 
     public function __construct(array $data)
