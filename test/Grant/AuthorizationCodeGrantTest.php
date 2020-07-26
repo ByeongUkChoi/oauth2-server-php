@@ -13,13 +13,13 @@ use oauth2server\Repository\RefreshTokenRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @testdox Authorization Code Grant 테스트
+ * @testdox Authorization Code Grant Test
  */
 class AuthorizationCodeGrantTest extends TestCase
 {
     private const ACCESS_TOKEN = 'test-access-token';
     /**
-     * @testdox 토큰 발급
+     * @testdox Token issuance test
      */
     public function testCreateToken(): void
     {
