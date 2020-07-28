@@ -48,10 +48,6 @@ class RefreshTokenGrant implements GrantTypeInterface
            throw new Exception("refresh token is revoked"); 
         }
 
-        // 만료되지 않았을 때 :
-        // 기존 refresh token을 비활성화 시킨다.
-        $this->refreshTokenRepository->revokeRefreshToken($request->getRefreshToken());
-
         $username = $refreshToken->getUsername();
         $clientId = $request->getClientId();
 
@@ -61,6 +57,8 @@ class RefreshTokenGrant implements GrantTypeInterface
 
         // refresh tokens 테이블에 생성한다.
         $this->refreshTokenRepository->persistNewRefreshToken($refreshToken);
+        // 기존 refresh token을 비활성화 시킨다.
+        $this->refreshTokenRepository->revokeRefreshToken($request->getRefreshToken());
         
         return new TokenDto([
             'accessToken' => $accessTokenId,
